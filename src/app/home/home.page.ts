@@ -6,7 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
+  public isSearchBoxOpened:boolean = false
   constructor() {}
-
+  onSearch(event){
+    console.log(event);
+  }
 }

@@ -1,14 +1,19 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>
-      Ionic Blank
+    <ion-title *ngIf="!isSearchBoxOpened">
+      Ionic Search Bar
     </ion-title>
+    <ion-searchbar *ngIf="isSearchBoxOpened" showCancelButton="true" (search)="onSearch($event)" (ionCancel)="isSearchBoxOpened=false"></ion-searchbar>
+    <ion-buttons slot="secondary">
+      <ion-button icon-only *ngIf="!isSearchBoxOpened" (click)="isSearchBoxOpened=true">
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+    <p>Animated Search Bar</p>
   </div>
 </ion-content>
