@@ -9,6 +9,6 @@ export class HomePage {
   public isSearchBoxOpened:boolean = false
   constructor() {}
   onSearch(event){
-    console.log(event);
+    console.log(event.target.value);
   }
 }
